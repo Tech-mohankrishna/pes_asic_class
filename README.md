@@ -29,20 +29,6 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 + **Memory**: 200 GB
 + **RAM**: 6 GB
 
-
-## My Device Specs
-
-+ **OS**: Ubuntu 22.04.3 LTS x86_64
-+ **Host**: Nitro AN515-44 V1.04
-+ **Kernel**: 6.2.0-26-generic
-+ **Shell**: bash 5.1.16
-+ **DE**: GNOME 42.9
-+ **Terminal**: gnome-terminal
-+ **CPU**: AMD Ryzen 5 4600H with Radeon Graphics (12)
-+ **GPU**: AMD ATI 05:00.0 Renoir
-+ **GPU**: NVIDIA 01:00.0 NVIDIA Corporation TU117M
-+ **Memory**: 750 GB
-
 ## Tools Installations
 ## Tools Used:
 + **RISC-V GNU Toolchain**: A comprehensive set of tools for compiling and building software to run on RISC-V processors.
