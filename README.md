@@ -126,6 +126,8 @@ gcc sum_1_n.c -o sum_1_n.o
 ./sum_1_n.o
 ```
 
+![Uploading image.png…]()
+
 
 compile the same using riscv compiler and view the output
 
