@@ -460,7 +460,11 @@ to make the process easy we make use of shell script : ``` rv32im.sh```
 
 # Day 3: Introduction to MakerChip 
 
-Makerchip provides free and instant access to the latest tools directly from your browser and from your desktop. This includes open-source tools and proprietary ones.
+Makerchip gives you a place to create any digital sequential logic you can dream up faster than you ever thought possible, all within your browser. The breakthrough in productivity is twofold:
+
++ **a tight integration of design, simulation, and debug capabilities**
++ **support for Transaction-Level Verilog (TL-Verilog), in addition to Verilog and synthesizable SystemVerilog**
+
 Some of the best features of makerchip were :
 + **Develop Verilog in your Browser and beyond that**: : Instead of writing in Verilog always_ff @(posedge clk) begin ... to create flip-flops... don't write anything! Organize your Verilog logic statements into pipelines, and let TL-Verilog imply the necessary flip-flops.
 + **Easy Pipelining** : Waveforms are organized by TL-Verilog design hierarchy
