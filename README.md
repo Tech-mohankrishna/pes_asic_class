@@ -125,8 +125,9 @@ execution command :
 gcc sum_1_n.c -o sum_1_n.o
 ./sum_1_n.o
 ```
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/c86f5593-6111-4ffd-b601-ee1783cd7f10)
 
-![Uploading image.png…]()
+
 
 
 compile the same using riscv compiler and view the output
