@@ -451,17 +451,24 @@ to make the process easy we make use of shell script : ``` rv32im.sh```
 
 ![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/08c88682-2c1f-431c-8e96-c57613993fc1)
 
-# Day 1: Introduction to MakerChip 
+</details>
+
+<details>
+<summary> Day 3: Introduction to MakerChip  </summary>
+<br>
+
+
+# Day 3: Introduction to MakerChip 
 
 Makerchip provides free and instant access to the latest tools directly from your browser and from your desktop. This includes open-source tools and proprietary ones.
 Some of the best features of makerchip were :
-1. Develop Verilog in your Browser and beyond that : Instead of writing in Verilog always_ff @(posedge clk) begin ... to create flip-flops... don't write anything! Organize your Verilog logic statements into pipelines, and let TL-Verilog imply the necessary flip-flops.
-2. Easy Pipelining : Waveforms are organized by TL-Verilog design hierarchy
-3. Organized Waveforms and diagrams : Your designs are represented in logic diagrams. TL-Verilog design hierarchy, including pipelines and pipeline stages, provides organization to your logic diagrams.
-4. Linked Design and Debug : TL-Verilog constructs in the code editor, diagram, and waveform viewer are all linked together. 
-5. Tool Integrations : Makerchip can easily be launched as a Verilog/TL-Verilog editor from other applications
++ **Develop Verilog in your Browser and beyond that**: : Instead of writing in Verilog always_ff @(posedge clk) begin ... to create flip-flops... don't write anything! Organize your Verilog logic statements into pipelines, and let TL-Verilog imply the necessary flip-flops.
++ **Easy Pipelining** : Waveforms are organized by TL-Verilog design hierarchy
++ **Organized Waveforms and diagrams**: Your designs are represented in logic diagrams. TL-Verilog design hierarchy, including pipelines and pipeline stages, provides organization to your logic diagrams.
++ **Linked Design and Debug** : TL-Verilog constructs in the code editor, diagram, and waveform viewer are all linked together.
++ **Tool Integrations** : Makerchip can easily be launched as a Verilog/TL-Verilog editor from other applications
 
-
+</details>
 
 
 
