@@ -13,6 +13,7 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 ## Week 1:
 + [Day 1:Introduction to RISC-V ISA and GNU Compiler Toolchain](#day-1-introduction-to-risc-v-isa-and-gnu-compiler-toolchain)
 + [Day 2:Introduction to ABI and Basic Verification Flow](#day-2-introduction-to-abi-and-basic-verification-flow)
++ [Day 3:Introduction to MakerChip](#day-2-introduction-to-makerchip)
 
 ## Week 2:
 
@@ -449,6 +450,18 @@ Steps :
 to make the process easy we make use of shell script : ``` rv32im.sh```
 
 ![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/08c88682-2c1f-431c-8e96-c57613993fc1)
+
+# Day 1: Introduction to MakerChip 
+
+Makerchip provides free and instant access to the latest tools directly from your browser and from your desktop. This includes open-source tools and proprietary ones.
+Some of the best features of makerchip were :
+1. Develop Verilog in your Browser and beyond that : Instead of writing in Verilog always_ff @(posedge clk) begin ... to create flip-flops... don't write anything! Organize your Verilog logic statements into pipelines, and let TL-Verilog imply the necessary flip-flops.
+2. Easy Pipelining : Waveforms are organized by TL-Verilog design hierarchy
+3. Organized Waveforms and diagrams : Your designs are represented in logic diagrams. TL-Verilog design hierarchy, including pipelines and pipeline stages, provides organization to your logic diagrams.
+4. Linked Design and Debug : TL-Verilog constructs in the code editor, diagram, and waveform viewer are all linked together. 
+5. Tool Integrations : Makerchip can easily be launched as a Verilog/TL-Verilog editor from other applications
+
+
 
 
 
