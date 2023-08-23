@@ -224,3 +224,235 @@ we can play around with different values , datatype to find their respect max an
 
 
 </details>
+
+
+<details>
+<summary> Day 2 : Introduction to ABI and Basic Verification Flow </summary>
+<br>
+	
+
+
+# Day 2 : Introduction to ABI and Basic Verification Flow
+In Day 2 of your course, you will understanding the RISC-V instruction set architecture (ISA) by exploring the various fields of RISC-V instructions and their functions. This knowledge is crucial for gaining a comprehensive understanding of how RISC-V processors execute instructions and how programs are executed at the hardware level.
+
+## Overview of few instructions :
+### R-Type (Register-Type):
+Operate on registers with fixed operand format.
+Examples: ADD, SUB, AND, OR, XOR, SLL, SRL, SRA, SLT, SLTU
+
+### I-Type (Immediate-Type):
+Immediate operand and one register operand.
+Examples: ADDI, SLTI, XORI, LB, LH, LW, JALR
+
+### S-Type (Store-Type):
+Store values from registers to memory.
+Examples: SB, SH, SW
+
+### B-Type (Branch-Type):
+Conditional branching based on comparisons.
+Examples: BEQ, BNE, BLT, BGE, BLTU, BGEU
+
+### U-Type (Upper Immediate-Type):
+Larger immediate field for encoding larger constants.
+Examples: LUI, AUIPC
+
+### J-Type (Jump-Type):
+Unconditional jumps and function calls.
+Example: JAL
+
+
+
+## Example of RISC-V instruction : 
+<p align="center">
+  <img src="https://github.com/VardhanSuroshi/pes_asic_class/assets/132068498/f8c1fa62-8d2d-4bf4-897b-cca693879e83" alt="Image" width="800">
+</p>
+
+- **Opcode [7]:** Indicates the operation type (arithmetic, logic, memory access, control flow) for the instruction, guiding the CPU's execution.
+- **rd (Destination Register) [5]:** Represents the destination register, where the operation result will be stored after execution.
+- **rs1 (Source Register 1) [5]:** Represents the first source register, holding the value used in the operation (typically first operand).
+- **rs2 (Source Register 2) [5]:** Represents the second source register, holding the value used in the operation (typically second operand).
+- **func7 and func3 (Function Fields) [7] [3]:** Further specify opcode category and specific operation, enabling more instruction variations.
+- **imm (Immediate Value):** Represents an embedded immediate constant within the instruction, used for offsets, constants, or data values.
+
+
+
+
+## Application Binary Interface :
+
+In the context of computer architecture and programming, **ABI** stands for **Application Binary Interface**. It's a set of conventions and rules that dictate how different parts of a software system interact with each other at the binary level. The ABI defines details such as:
+
++ **Calling Conventions:** Specifies how function calls handle parameters and pass data, including the order of arguments, used registers, and stack frame management.
+
++ **Register Usage:** Defines how registers are allocated for passing parameters, returning values, and other purposes.
+
++ **Data Alignment:** Establishes rules for aligning data structures in memory to enhance access efficiency.
+
++ **Stack Frame Layout:** Determines how the stack is structured during function calls, managing local variable storage.
+
++ **System Calls:** Describes how applications request services from the operating system through system calls.
+
++ **Exception Handling:** Outlines how the system manages exceptions like hardware interrupts or software errors.
+
+<p align="center">
+  <img src="https://github.com/VardhanSuroshi/pes_asic_class/assets/132068498/e156a95b-5fea-41b6-a00c-822c80e92f11" alt="Image" width="800">
+</p>
+
+### 32 - ABI registers in RISC-V and their usage:
+<p align="center">
+  <img src="https://github.com/VardhanSuroshi/pes_asic_class/assets/132068498/a7d48468-c612-488f-8ae8-00bfc65cfe65" alt="Image" width="400">
+</p>
+
+
+
+## Memory Allocations : 
+Data can be stored in register by two methods :
++ Directly store in registers
++ Store into registers from memory
+  
+What sets RISC (Reduced Instruction Set Computer) architecture apart from CISC (Complex Instruction Set Computer) is its emphasis on simplicity and efficiency, particularly regarding memory operations.
+
+In RISC, the load (L) and store (S) instructions play a fundamental role in memory access. They are used to efficiently transfer data between registers and memory. Additionally, arithmetic or logic operations often use register-to-register (reg-to-reg) instructions like ADD.
+
+
+### CISC VS RISC : 
+<p align="center">
+  <img src="https://github.com/VardhanSuroshi/pes_asic_class/assets/132068498/96ec694b-698c-4841-8122-07fa477afcd6" alt="Image" width="400">
+</p>
+
+  
+### RISC-V belongs to **litte endian** memory addressing system 
+
+Consider adding two numbers from memory and storing the result back in memory:
+
+```
+LW  R1, 0(R2)      ; Load data from memory into register R1
+LW  R3, 4(R2)      ; Load another data from memory into register R3
+ADD R4, R1, R3     ; Add data in registers R1 and R3, store result in R4
+SW  R4, 8(R2)      ; Store the result in R4 back into memory
+ ``` 
+
+### Little-Endian Representation:
+In a little-endian system, the least significant byte (LSB) is stored at the lowest memory address, and the most significant byte (MSB) is stored at the highest memory address.
+
+```
+Memory Address:   0     1     2     3
+Stored Value:    78    56    34    12
+```
+
+### Big-Endian Representation:
+
+In a big-endian system, the most significant byte (MSB) is stored at the lowest memory address, and the least significant byte (LSB) is stored at the highest memory address.
+
+```
+Memory Address:   0     1     2     3
+Stored Value:    12    34    56    78
+```
+
+## Lab for ABI function call
+This is can interesting lab where we write a code along with assembly code . THe C code calls function to find sum written in the ASM .
+we then display the results using c code again .
+
+The algorithm will look like this :
+
+<p align="center">
+  <img src="https://github.com/VardhanSuroshi/pes_asic_class/assets/132068498/36d03a93-1b54-4120-9a26-3cfad88b71b5" alt="Image" width="600">
+</p>
+
+c code snipet : ``` custom_call.c```
+
+```
+#include <stdio.h>
+
+extern int load(int x, int y); // Declare the external "load" function
+
+int main() {
+  int result = 0;              // Initialize the result variable
+  int count = 9;               // Initialize the count variable
+  result = load(0x0, count+1); // Call the "load" function with arguments
+  printf("Sum of numbers from 1 to 9 is %d\n", result); // Print the result
+  return 0;                    // Return 0 to indicate successful execution
+}
+
+
+```
+ASM code snipet : ``` load.s```
+```
+.section .text        # Text section where the code resides
+.global load          # Declare the function "load" as global
+.type load, @function # Define the type of "load" as a function
+
+load:                 # Start of the "load" function
+
+# Initialize a4 with the value of a0 (copy value from a0 to a4)
+add a4, a0, zero
+
+# Copy the value of a1 to a2
+add a2, a0, a1
+
+# Initialize a3 with the value of a0 (copy value from a0 to a3)
+add a3, a0, zero
+
+loop:                 # Label for the loop
+
+# Add the value in a3 to a4 (accumulate)
+add a4, a3, a4
+
+# Increment the value in a3 by 1
+addi a3, a3, 1
+
+# Compare a3 with a2 (comparison for loop termination)
+blt a3, a2, loop       # Branch to "loop" if a3 < a2
+
+# Copy the accumulated value in a4 to a0 (result)
+add a0, a4, zero
+
+ret                    # Return from the function
+
+
+```
+
+
+### Simulate C Program using Function Call :
++ **Compilation:** To compile C code and Asseembly file use the command
+  ``` riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o custom_call.o custom_call.c load.s ```
+  this would generate object file custom_call.o.
+
++ **Execution:** To execute the object file run the command
+```spike pk custom_call.o```
+
+Execution output :
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/a6ffd95d-8ddf-4829-989f-316bacae007c)
+
+
+## Lab : Run C code on a RISC-V CPU
+Let us run our simple C code in a RISC-V CPU - PICORV-32 wirtten in verilog .
+Steps :
++ We convert our C program to a hex file and load in the memory of CPU
++ Make use of testbech to run the code
++ Display the results
+
+  The picorv design and the shell scripts are already built in a github repo
+  ```
+  cd
+  git clone https://github.com/kunalg123/riscv_workshop_collaterals.git
+  
+  ```
+  Once installed navigate through the ``` riscv_workshop_collaterals/labs```
+  run the following command : 
+  ```
+  chmod 777 rv32im.sh
+  ./rv32im.sh
+  ```
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/44e11507-3c66-4ad9-a70b-22cdb2d398e1)
+
+to make the process easy we make use of shell script : ``` rv32im.sh```
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/08c88682-2c1f-431c-8e96-c57613993fc1)
+
+
+
+
+
+
+
