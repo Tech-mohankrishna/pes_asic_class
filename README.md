@@ -9,25 +9,24 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 
 
 # Table of Contents
-+ [Tools Installations](#tools-installation)
-## Week 1:
 + [Day 1:Introduction to RISC-V ISA and GNU Compiler Toolchain](#day-1-introduction-to-risc-v-isa-and-gnu-compiler-toolchain)
 + [Day 2:Introduction to ABI and Basic Verification Flow](#day-2-introduction-to-abi-and-basic-verification-flow)
-
-## Week 2:
-
-## Week 3:
-
-## Week 4:
-
-## Week 5:
-
-
 
 ## Requirements:
 + **OS**: Ubuntu 20 +
 + **Memory**: 200 GB
 + **RAM**: 6 GB
+
+
+
+Errors regarding tools installation are resolved in [Resolve Errors Guide](resolve_errors.md)
+
+
+<details>
+<summary> DAY 1: Introduction to RISC-V ISA and GNU Compiler Toolchain </summary>
+<br>
+	
+# Day 1: Introduction to RISC-V ISA and GNU Compiler Toolchain
 
 ## Tools Installations
 ## Tools Used:
@@ -42,16 +41,6 @@ sudo apt update
 chmod +x install_tools.sh
 ./install_tools.sh
 ```
-Errors regarding tools installation are resolved in [Resolve Errors Guide](resolve_errors.md)
-
-
-<details>
-<summary> DAY 1: Introduction to RISC-V ISA and GNU Compiler Toolchain </summary>
-<br>
-	
-# Day 1: Introduction to RISC-V ISA and GNU Compiler Toolchain
-
-
 
 
 ## Overview from Application to Hardware
