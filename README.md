@@ -1,4 +1,4 @@
-# PES ASIC CLASS
+# 🟩 PES ASIC CLASS 🟩
 # :book: About the repository
 
 Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs using open-source tools! Here, we embark on a journey that starts with processor specifications and leverages the power of the RISC-V ISA. We'll build processors from scratch, taking them through the entire RTL to GDS process  that meets various Performance, Power, Area ( PPA ) and manufacturability requirements. The best part? We're doing it all with open-source tools, including the RISC-V toolchain and OpenLane anad many more .
@@ -8,7 +8,7 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 
 
 
-# Table of Contents
+# 🔖 Table of Contents
 + [Day 1:Introduction to RISC-V ISA and GNU Compiler Toolchain](#day-1-introduction-to-risc-v-isa-and-gnu-compiler-toolchain)
 + [Day 2:Introduction to ABI and Basic Verification Flow](#day-2-introduction-to-abi-and-basic-verification-flow)
 + [ Day-3:Introduction to Verilog RTL design and Synthesis](#day-3-Introduction-to-Verilog-RTL-design-and-Synthesis)
@@ -444,9 +444,11 @@ to make the process easy we make use of shell script : ``` rv32im.sh```
 
 
 
-# Day-3-Introduction to Verilog RTL design and Synthesis
 <details>
 <summary>Introduction to Verilog RTL design and Synthesis</summary>
+
+# Day-3-Introduction to Verilog RTL design and Synthesis
+
 
 **RTL Design**: In simple terms RTL design or Register Transfer Level design is a method in which we can transfer data from one register to another. In RTL design we write code for Combinational and Sequential circuits in HDL(Hardware Description Language) like Verilog or VerilogHDL which can model logical and hardware operation. RTL design can be one code or set of verilog codes. **One key note is that we need to write RTL design with optimized and synthesizable (realizable as physical gates)**.
 
@@ -474,6 +476,7 @@ Here is the flow of frondend design:
 **iverilog**: iverilog stands for Icarus Verilog. Icarus Verilog is an implementation of the Verilog hardware description language. It supports the 1995, 2001 and 2005 versions of the standard, portions of SystemVerilog, and some extensions.
 
 **Gtkwave**: GTKWave is a fully featured GTK+ based wave viewer for Unix, Win32, and Mac OSX which reads LXT, LXT2, VZT, FST, and GHW files as well as standard Verilog VCD/EVCD files and allows their viewing. 
+
 </details>
 
 ### Lab examples using iverilog and gtkwave
@@ -639,7 +642,7 @@ yosys> !vim good_mux_netlist.v
 ```
 </details>
 
-
+</details>
 
 
 
