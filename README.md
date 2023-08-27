@@ -445,7 +445,8 @@ to make the process easy we make use of shell script : ``` rv32im.sh```
 
 
 <details>
-<summary>Introduction to Verilog RTL design and Synthesis</summary>
+<summary>Day -3 : Introduction to Verilog RTL design and Synthesis</summary>
+
 
 # Day-3-Introduction to Verilog RTL design and Synthesis
 
@@ -642,7 +643,6 @@ yosys> !vim good_mux_netlist.v
 ```
 </details>
 
-</details>
 
 
 
