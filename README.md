@@ -1180,6 +1180,94 @@ show
 
 
 
++ ***Sequential Logic Optimization***
+
+
+### **code - 1**
+
+#### dff_const1.v
+``` v
+module dff_const1(input clk, input reset, output reg q);
+always @(posedge clk, posedge reset)
+begin
+        if(reset)
+                q <= 1'b0;
+        else
+                q <= 1'b1;
+end
+
+endmodule
+~          
+```
+
+#### simulation : 
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/6b836fc6-c588-4869-997d-e8b566724e0a)
+
+
+#### Syntehsis :
+
+commands for synthesis :
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const1.v
+synth -top dff_const1
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/331151f1-7b22-4cb0-b295-5adbe7e64841)
+
+
+
+
+
+
+
+
+### **code - 2**
+
+#### dff_const2.v
+``` v
+module dff_const2(input clk, input reset, output reg q);
+always @(posedge clk, posedge reset)
+begin
+        if(reset)
+                q <= 1'b1;
+        else
+                q <= 1'b1;
+end
+
+endmodule
+               
+```
+
+#### simulation : 
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/b258b1a9-92dd-42b9-9e54-7c9592ad97fc)
+
+
+
+#### Syntehsis :
+
+commands for synthesis :
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const2.v
+synth -top dff_const2
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/33a9b0a0-f9d7-4802-ba53-b937e4cd2ea3)
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/3e439cf3-3d9c-4729-94a1-e41b93c22f58)
+
+
+
 
 </details>
 
