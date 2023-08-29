@@ -14,7 +14,7 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 + [ Day-3:Introduction to Verilog RTL design and Synthesis](#day-3-Introduction-to-Verilog-RTL-design-and-Synthesis)
 + [ Day-4:Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles](#Day-4:Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles)
 
-## Requirements:
+## :Requirements:
 + **OS**: Ubuntu 20 +
 + **Memory**: 200 GB
 + **RAM**: 6 GB
