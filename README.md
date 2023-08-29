@@ -13,6 +13,7 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 + [Day 2:Introduction to ABI and Basic Verification Flow](#day-2-introduction-to-abi-and-basic-verification-flow)
 + [ Day-3:Introduction to Verilog RTL design and Synthesis](#day-3-Introduction-to-Verilog-RTL-design-and-Synthesis)
 + [ Day-4:Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles](#Day-4-Timing-Libs-Heirarchical-V/S-Flat-Synthesis-&-Effecient-Flop-Coding-Styles)
++ [ Day-5:Combinational & Sequential Optimizations ](#Day-5-Combinational-&-Sequential-Optimizations)
 
 ## :Requirements:
 + **OS**: Ubuntu 20 +
@@ -996,8 +997,200 @@ write_verilog mul2_net.v
 ![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/c1e3d351-ee95-4997-97de-0d811053f920)
 
 </details>
-
-
  
 </details>
+
+<details>
+<summary> DAY 5: Combinational & Sequential Optimizations </summary>
+<br>
+	
+# Day 5: Combinational & Sequential Optimizations
+
+<br>
+
++ ***Introduction to Optimizations***
+
+Complete Theory on Optimization Techniques
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/3527eae1-1f2c-4522-99a8-7e3d8b2555e5)
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/1323e78e-cdaa-49f4-a6b1-6a6ec9020443)
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/c71b8d82-6fd7-4fa4-9269-b1ee97779931)
+
++ ***Combination Logic Optimization***
+
+
+### Code: 1
+
+```
+module opt_check (input a , input b , output y);
+        assign y = a?b:0;
+endmodule
+
+```
+
+### synthesis:
+
+commands:
+
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog opt_check.v
+synth -top opt_check
+opt_clean -purge
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/a7a8b75b-7a54-49be-afe1-7fd3ef959356)
+
+
+
+### Code: 2
+
+```
+module opt_check2 (input a , input b , output y);
+        assign y = a?1:b;
+endmodule
+
+```
+
+### synthesis:
+
+commands:
+
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog opt_check2.v
+synth -top opt_check2
+opt_clean -purge
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/a7a8b75b-7a54-49be-afe1-7fd3ef959356)
+
+
+### Code: 3
+
+```
+module opt_check3 (input a , input b, input c , output y);
+        assign y = a?(c?b:0):0;
+endmodule
+
+```
+### synthesis:
+
+commands:
+
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog opt_check3.v
+synth -top opt_check3
+opt_clean -purge
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/95355286-478e-425f-aa15-a9b0e0900ab1)
+
+
+
+### Code: 4
+
+```
+module sub_module1(input a , input b , output y);
+ assign y = a & b;
+endmodule
+
+
+module sub_module2(input a , input b , output y);
+ assign y = a^b;
+endmodule
+
+
+module multiple_module_opt(input a , input b , input c , input d , output y);
+wire n1,n2,n3;
+
+sub_module1 U1 (.a(a) , .b(1'b1) , .y(n1));
+sub_module2 U2 (.a(n1), .b(1'b0) , .y(n2));
+sub_module2 U3 (.a(b), .b(d) , .y(n3));
+
+assign y = c | (b & n1);
+
+
+endmodule
+
+
+```
+### synthesis:
+
+commands:
+
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog multiple_module_opt.v
+synth -top multiple_module_opt
+opt_clean -purge
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+flatten
+show
+```
+
+
+
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/0f10d1df-14cb-422d-9429-8aa1d707f804)
+
+
+
+### Code: 5
+
+```
+module sub_module(input a , input b , output y);
+ assign y = a & b;
+endmodule
+
+
+
+module multiple_module_opt2(input a , input b , input c , input d , output y);
+wire n1,n2,n3;
+
+sub_module U1 (.a(a) , .b(1'b0) , .y(n1));
+sub_module U2 (.a(b), .b(c) , .y(n2));
+sub_module U3 (.a(n2), .b(d) , .y(n3));
+sub_module U4 (.a(n3), .b(n1) , .y(y));
+
+
+endmodule
+
+```
+### synthesis:
+
+commands:
+
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog multiple_module_opt2.v
+synth -top multiple_module_opt2
+opt_clean -purge
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+flatten
+show
+```
+
+
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/80895f5c-9a12-4111-b99e-0a08e8b0aab4)
+
+
+
+
+
+
+
+
+</details>
+
+
+
+
+
+
 
