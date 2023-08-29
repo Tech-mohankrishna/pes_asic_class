@@ -1127,16 +1127,17 @@ commands:
 read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 read_verilog multiple_module_opt.v
 synth -top multiple_module_opt
+flatten
 opt_clean -purge
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-flatten
 show
 ```
 
 
 
 
-![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/0f10d1df-14cb-422d-9429-8aa1d707f804)
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/c3fb7662-08c9-4085-a372-073a3410d13e)
+
 
 
 
@@ -1169,19 +1170,13 @@ commands:
 read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 read_verilog multiple_module_opt2.v
 synth -top multiple_module_opt2
+flatten
 opt_clean -purge
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-flatten
 show
 ```
 
-
-
-![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/80895f5c-9a12-4111-b99e-0a08e8b0aab4)
-
-
-
-
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/3bfed236-54b3-461b-a39b-0e2327b9ad7a)
 
 
 
