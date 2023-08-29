@@ -800,27 +800,26 @@ Certainly, here's a more concise version:
 **1. Asynchronous Reset D Flip-Flop**
 - When an asynchronous reset input is activated (set to '1'), regardless of the clock signal, the stored value is forced to '0'.
 - Otherwise, on the positive edge of the clock signal, the stored value is updated with the data input.
-### dff_asyncres_syncres.v
+### dff_asyncres.v
 ``` v
-module dff_asyncres_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
+module dff_async_set ( input clk ,  input async_set , input d , output reg q );
 always @ (posedge clk , posedge async_reset)
 begin
 	if(async_reset)
-		q <= 1'b0; // Asynchronous reset( irrespective of clock )
-	else if (sync_reset) 
-		q <= 1'b0;
+		q <= 1'b1;
 	else	
 		q <= d;
 end
 endmodule
 ```
+
+```
 ### simulation : 
 
 ![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/6c11a10f-be1d-4d5f-b7ae-745685a1a169)
 
-
-
 **2. Synchronous Reset D Flip-Flop**
+
 - When a synchronous reset input is activated (set to '1') at the positive edge of the clock signal, the stored value is forced to '0'.
 - Otherwise, on the positive edge of the clock signal, the stored value is updated with the data input.
 ### dff_syncres.v
@@ -855,6 +854,9 @@ end
 endmodule
 ```
 
+### simulation result: 
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/d3346454-ab0d-4458-a792-0d2511a65030)
+
 
 **4. Asynchronous Set D Flip-Flop**
 - When an asynchronous set input is activated (set to '1'), regardless of the clock signal, the stored value is forced to '1'.
@@ -871,6 +873,28 @@ begin
 end
 endmodule
 ```
+### simulation results:
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/16a42ad2-7cc6-44dc-9ba9-4c9ac8a130cd)
+
+
+**5. Asynchronous Reset D Flip-Flop**
+- When an asynchronous set input is activated (set to '1'), regardless of the clock signal, the stored value is forced to '1'.
+- Otherwise, on the positive edge of the clock signal, the stored value is updated with the data input.
+
+``` v
+module dff_async_set ( input clk ,  input async_set , input d , output reg q );
+always @ (posedge clk , posedge async_reset)
+begin
+	if(async_reset)
+		q <= 1'b1;
+	else	
+		q <= d;
+end
+endmodule
+```
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/bc1281af-c7de-4211-9637-716e838b672f)
+
 
 
 
