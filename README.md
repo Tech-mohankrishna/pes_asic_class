@@ -817,6 +817,22 @@ endmodule
 
 ![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/6c11a10f-be1d-4d5f-b7ae-745685a1a169)
 
+#### Syntehsis :
+
+commands for synthesis :
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_asyncres.v
+synth -top dff_asyncres
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/19fca166-61e8-44b9-bbc9-4ae6cd0acd49)
+
+
+
 ### **2. Synchronous Reset D Flip-Flop**
 
 - When a synchronous reset input is activated (set to '1') at the positive edge of the clock signal, the stored value is forced to '0'.
@@ -835,6 +851,20 @@ endmodule
 ```
 #### simulation :
 ![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/00e20f73-0b52-4cc1-a893-910f780d8610)
+
+#### Syntehsis :
+
+commands for synthesis :
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_syncres.v
+synth -top dff_syncres
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/6dd7a274-9f3a-4e6b-81ae-b47e57d04cb1)
+
 
 
 ### **3. D Flip-Flop with Asynchronous Reset and Synchronous Reset**
@@ -861,6 +891,20 @@ endmodule
 ![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/d3346454-ab0d-4458-a792-0d2511a65030)
 
 
+#### Synthesis :
+
+commands for synthesis :
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_asyncres_syncres.v
+synth -top dff_asyncres
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/88d3e7c5-47e8-467b-a9f0-98fdd1d58807)
+
+
 ### ***4. Asynchronous Set D Flip-Flop***
 - When an asynchronous set input is activated (set to '1'), regardless of the clock signal, the stored value is forced to '1'.
 - Otherwise, on the positive edge of the clock signal, the stored value is updated with the data input.
@@ -880,5 +924,80 @@ endmodule
 ![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/16a42ad2-7cc6-44dc-9ba9-4c9ac8a130cd)
 
 
+#### Syntehsis :
+
+commands for synthesis :
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_async_set.v
+synth -top dff_asyncres
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/be145c9f-af67-4db1-80f9-3f760039703a)
+
+
+<details>
+<summary> Interesting Optimizations </summary>
+<br>
+
+### Interesting Optimization
+
+##### Code: 1
+```
+module mul2 (input [2:0] a, output [3:0] y);
+	assign y = a * 2;
+endmodule
+```
+
+command to  run : 
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog mult_2.v
+synth -top mul2
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+write_verilog mul2_net.v
+!vim mul2_net.v
+```
+
+#### Synthesis : 
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/0b500569-5a6d-4242-b1fd-55185e243a21)
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/9d687a90-c890-42ba-8774-bbfe7e6ba349)
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/831d6105-192b-402d-a9a1-2b1b535448c7)
+
+##### Code:2
+```
+module mult8 (input [2:0] a , output [5:0] y);
+        assign y = a * 9;
+endmodule
+
+```
+<br>
+
+command to  run : 
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog mult_2.v
+synth -top mul2
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+write_verilog mul2_net.v
+!vim mul2_net.v
+```
+#### Synthesis : 
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/58214dec-2bf9-4b88-8499-c831683f8bd3)
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/36327782-d902-44d1-bf0f-c179b22b504b)
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/c1e3d351-ee95-4997-97de-0d811053f920)
+
+</details>
+
+
+ 
 </details>
 
