@@ -770,5 +770,104 @@ yosys> !vim good_mux_netlist.v
   
 
 
+### submodule level synthesis
+
+Certainly, here's a more concise version:
+
+1. **Modularity and Reusability:** Submodule synthesis enables the creation of reusable functional units, streamlining complex VLSI designs by breaking them into manageable components.
+
+2. **Efficiency and Parallelism:** Designers can work simultaneously on different submodules, accelerating the design process and facilitating focused optimization and testing.
+
+3. **Resource Optimization:** Submodule reuse optimizes resource utilization, while independent testing and iterative refinement enhance design quality and speed up development.
+
+
+- Go to verilog_files directory
+- once you get to verilog_files directory, Invoke yosys by using the command `yosys`
+- once yosys is invoked follow the above sequence of commands
+  ``` sh
+  read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
+  read_verilog multiple_modules.v
+  synth -top sub_modules1
+  abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+  show
+  ```
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/8d6d1b57-ba9e-47b2-a203-8fde5de609d9)
+
+
+# Various Flop Coding Styles and optimization
+## Flop coding styles
+
+**Asynchronous Reset D Flip-Flop**
+- When an asynchronous reset input is activated (set to '1'), regardless of the clock signal, the stored value is forced to '0'.
+- Otherwise, on the positive edge of the clock signal, the stored value is updated with the data input.
+### dff_asyncres_syncres.v
+``` v
+module dff_asyncres_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
+always @ (posedge clk , posedge async_reset)
+begin
+	if(async_reset)
+		q <= 1'b0; // Asynchronous reset( irrespective of clock )
+	else if (sync_reset) 
+		q <= 1'b0;
+	else	
+		q <= d;
+end
+endmodule
+```
+
+**Asynchronous Set D Flip-Flop**
+- When an asynchronous set input is activated (set to '1'), regardless of the clock signal, the stored value is forced to '1'.
+- Otherwise, on the positive edge of the clock signal, the stored value is updated with the data input.
+### dff_async_set.v
+``` v
+module dff_async_set ( input clk ,  input async_set , input d , output reg q );
+always @ (posedge clk , posedge async_set)
+begin
+	if(async_set)
+		q <= 1'b1;
+	else	
+		q <= d;
+end
+endmodule
+```
+
+**Synchronous Reset D Flip-Flop**
+- When a synchronous reset input is activated (set to '1') at the positive edge of the clock signal, the stored value is forced to '0'.
+- Otherwise, on the positive edge of the clock signal, the stored value is updated with the data input.
+### dff_syncres.v
+``` v
+module dff_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
+always @ (posedge clk )
+begin
+	if (sync_reset)
+		q <= 1'b0;
+	else	
+		q <= d;
+end
+endmodule
+```
+
+**D Flip-Flop with Asynchronous Reset and Synchronous Reset**
+- This flip-flop combines both asynchronous and synchronous reset features.
+- When the asynchronous reset input is activated (set to '1'), the stored value is immediately forced to '0'.
+- When the synchronous reset input is activated (set to '1') at the positive edge of the clock signal, the stored value is forced to '0'.
+- Otherwise, on the positive edge of the clock signal, the stored value is updated with the data input.
+### dff_asyncres_syncres.v
+``` v
+module dff_asyncres_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
+always @ (posedge clk , posedge async_reset)
+begin
+	if(async_reset)
+		q <= 1'b0;
+	else if (sync_reset)
+		q <= 1'b0;
+	else	
+		q <= d;
+end
+endmodule
+```
+
+
+
 </details>
 
