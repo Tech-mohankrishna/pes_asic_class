@@ -797,7 +797,7 @@ Certainly, here's a more concise version:
 # Various Flop Coding Styles and optimization
 ## Flop coding styles
 
-**Asynchronous Reset D Flip-Flop**
+**1. Asynchronous Reset D Flip-Flop**
 - When an asynchronous reset input is activated (set to '1'), regardless of the clock signal, the stored value is forced to '0'.
 - Otherwise, on the positive edge of the clock signal, the stored value is updated with the data input.
 ### dff_asyncres_syncres.v
@@ -814,24 +814,13 @@ begin
 end
 endmodule
 ```
+### simulation : 
 
-**Asynchronous Set D Flip-Flop**
-- When an asynchronous set input is activated (set to '1'), regardless of the clock signal, the stored value is forced to '1'.
-- Otherwise, on the positive edge of the clock signal, the stored value is updated with the data input.
-### dff_async_set.v
-``` v
-module dff_async_set ( input clk ,  input async_set , input d , output reg q );
-always @ (posedge clk , posedge async_set)
-begin
-	if(async_set)
-		q <= 1'b1;
-	else	
-		q <= d;
-end
-endmodule
-```
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/6c11a10f-be1d-4d5f-b7ae-745685a1a169)
 
-**Synchronous Reset D Flip-Flop**
+
+
+**2. Synchronous Reset D Flip-Flop**
 - When a synchronous reset input is activated (set to '1') at the positive edge of the clock signal, the stored value is forced to '0'.
 - Otherwise, on the positive edge of the clock signal, the stored value is updated with the data input.
 ### dff_syncres.v
@@ -846,8 +835,7 @@ begin
 end
 endmodule
 ```
-
-**D Flip-Flop with Asynchronous Reset and Synchronous Reset**
+**3. D Flip-Flop with Asynchronous Reset and Synchronous Reset**
 - This flip-flop combines both asynchronous and synchronous reset features.
 - When the asynchronous reset input is activated (set to '1'), the stored value is immediately forced to '0'.
 - When the synchronous reset input is activated (set to '1') at the positive edge of the clock signal, the stored value is forced to '0'.
@@ -861,6 +849,23 @@ begin
 		q <= 1'b0;
 	else if (sync_reset)
 		q <= 1'b0;
+	else	
+		q <= d;
+end
+endmodule
+```
+
+
+**4. Asynchronous Set D Flip-Flop**
+- When an asynchronous set input is activated (set to '1'), regardless of the clock signal, the stored value is forced to '1'.
+- Otherwise, on the positive edge of the clock signal, the stored value is updated with the data input.
+### dff_async_set.v
+``` v
+module dff_async_set ( input clk ,  input async_set , input d , output reg q );
+always @ (posedge clk , posedge async_set)
+begin
+	if(async_set)
+		q <= 1'b1;
 	else	
 		q <= d;
 end
