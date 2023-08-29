@@ -705,6 +705,70 @@ yosys> !vim good_mux_netlist.v
 
 # Day-4:Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles
 
++ ***Introduction to .lib***
+
+![pvt vs  delay](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/4e36fd52-1bb1-47c9-8c2d-b63e2428ac1d)
+
+
++ **Heirarchical V/S Flat Synthesis**
+
+ Hierarchical synthesis is an approach to manage and simplify the design process for such complex circuits by breaking down the design into smaller, manageable blocks or modules.
+
++ ***Abstraction Levels***: Hierarchical synthesis divides VLSI design into abstraction levels.
++ ***Progressive Refinement***: The design starts at a high level and gradually refines into lower levels.
++ ***Module Organization***: Design is divided into functional modules at each level.
++ ***Efficiency and Parallelism***: Different modules can be designed simultaneously, improving efficiency.
++ ***Modularity***: Modules can be reused and tested independently.
++ ***Complexity Management***: Helps manage the intricacy of modern VLSI designs.
++ ***Optimization***: Different hierarchy stages allow specific optimizations.
+
+### Steps to Hierarchical Synthesis
+- Go to verilog_files directory
+- once you get to verilog_files directory, Invoke yosys by using the command `yosys`
+- once yosys is invoked follow the above sequence of commands
+  ``` sh
+  read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
+  read_verilog multiple_modules.v
+  synth -top multiple_modules
+  abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+  show multiple_modules
+  write_verilog -noattr multiple_modules_hier.v
+  !vim multiple_modules_hier.v
+  ```
+  
+**multiple_modules_hier.v**
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/197681ba-339d-4d93-b233-50f7c77e452b)
+
+
+### Flat Synthesis
+- In flat synthesis, the entire design is synthesized as a single, monolithic entity.
+- All modules, submodules, and logic are flattened into a single level of hierarchy.
+- This means that all components, regardless of their intended functionality, are combined into a single giant netlist
+- Best suited for simple designs where complexity is low and maintainability isn't a significant concern.
+
+### Steps to Flat Synthesis
+- Go to verilog_files directory
+- once you get to verilog_files directory, Invoke yosys by using the command `yosys`
+- once yosys is invoked follow the above sequence of commands
+  ``` sh
+  read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
+  read_verilog multiple_modules.v
+  synth -top multiple_modules
+  abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+  flatten
+  show
+  write_verilog -noattr multiple_modules_flat.v
+  !gvim multiple_modules_flat.v
+  ```
+
+
+***multiple_modules.flat.v***
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/d2c8e576-67b6-4815-a043-35602bab17c4)
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/4b5bd2f4-2a8e-477f-af2a-7b9fd50ea7a6)
+  
+
 
 </details>
 
