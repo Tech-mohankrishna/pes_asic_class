@@ -701,7 +701,7 @@ yosys> !vim good_mux_netlist.v
 
 
 <details>
-<summary>Day-4:Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles </summary>
+<summary>Day-4:Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles</summary>
 
 # Day-4:Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles
 
