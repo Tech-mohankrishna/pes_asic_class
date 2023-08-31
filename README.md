@@ -8,7 +8,7 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 
 
 
-# 🔖 Table of Contents
+# Table of Contents
 + [Day 1️⃣: Introduction to RISC-V ISA and GNU Compiler Toolchain](#introduction-to-risc-v-isa-and-gnu-compiler-toolchain)
 + [Day 2️⃣: Introduction to ABI and Basic Verification Flow](#introduction-to-abi-and-basic-verification-flow)
 + [Day 3️⃣: Introduction to Verilog RTL design and Synthesis](#introduction-to-verilog-rtl-design-and-synthesis)
