@@ -217,6 +217,7 @@ we can play around with different values , datatype to find their respect max an
 
 # DAY-2
 # Introduction to ABI and Basic Verification Flow
+[Back to main](#table-of-contents)
 In Day 2 of your course, you will understanding the RISC-V instruction set architecture (ISA) by exploring the various fields of RISC-V instructions and their functions. This knowledge is crucial for gaining a comprehensive understanding of how RISC-V processors execute instructions and how programs are executed at the hardware level.
 
 ## Overview of few instructions :
@@ -438,7 +439,7 @@ to make the process easy we make use of shell script : ``` rv32im.sh```
 
 # Day-3
 # Introduction to Verilog RTL design and Synthesis
-
+[Back to main](#table-of-contents)
 
 **RTL Design**: In simple terms RTL design or Register Transfer Level design is a method in which we can transfer data from one register to another. In RTL design we write code for Combinational and Sequential circuits in HDL(Hardware Description Language) like Verilog or VerilogHDL which can model logical and hardware operation. RTL design can be one code or set of verilog codes. **One key note is that we need to write RTL design with optimized and synthesizable (realizable as physical gates)**.
 
@@ -688,7 +689,7 @@ yosys> !vim good_mux_netlist.v
 
 # Day-4
 # timing libs heirarchical and flat synthesis
-
+[Back to main](#table-of-contents)
 + ***Introduction to .lib***
 
 ![pvt vs  delay](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/4e36fd52-1bb1-47c9-8c2d-b63e2428ac1d)
@@ -984,7 +985,7 @@ write_verilog mul2_net.v
 
 # Day 5
 # Combinational and Sequential Optimizations
-
+[Back to main](#table-of-contents)
 <br>
 
 + ***Introduction to Optimizations***
@@ -1350,6 +1351,7 @@ endmodule
 
 # Day 6
 # GLS, blocking vs non-blocking and Synthesis-Simulation mismatch
+[Back to main](#table-of-contents)
 ## GLS Concepts And Flow Using Iverilog
 ### Gate level simulation
 + Gate-level synthesis produces an exact logic representation of the design using basic gates (AND, OR, NOT, etc.). This accuracy ensures that the design behaves as intended at the transistor level.
