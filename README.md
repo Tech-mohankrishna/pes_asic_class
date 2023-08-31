@@ -10,7 +10,7 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 
 # 🔖 Table of Contents
 + [Day 1️⃣: Introduction to RISC-V ISA and GNU Compiler Toolchain](#day-1-introduction-to-risc-v-isa-and-gnu-compiler-toolchain)
-+ [Day 2️⃣: Introduction to ABI and Basic Verification Flow](#day-2-introduction-to-abi-and-basic-verification-flow)
++ [Day 2️⃣: Introduction to ABI and Basic Verification Flow](#introduction-to-abi-and-basic-verification-flow)
 + [Day 3️⃣: Introduction to Verilog RTL design and Synthesis](#day-3-introduction-to-verilog-rtl-design-and-synthesis)
 + [Day 4️⃣: Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles](#day-4-timing-libs-heirarchical-v-s-flat-synthesis-&-effecient-flop-coding-styles)
 + [Day 5️⃣: Combinational & Sequential Optimizations](#day-5-combinational-sequential-optimizations)
@@ -214,8 +214,8 @@ Output of code snippet :
 
 we can play around with different values , datatype to find their respect max and min values 
 
-
-# Day 2 : Introduction to ABI and Basic Verification Flow
+# DAY-2
+# Introduction to ABI and Basic Verification Flow
 In Day 2 of your course, you will understanding the RISC-V instruction set architecture (ISA) by exploring the various fields of RISC-V instructions and their functions. This knowledge is crucial for gaining a comprehensive understanding of how RISC-V processors execute instructions and how programs are executed at the hardware level.
 
 ## Overview of few instructions :
