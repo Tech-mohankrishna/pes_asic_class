@@ -29,11 +29,6 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 
 Errors regarding tools installation are resolved in [Resolve Errors Guide](resolve_errors.md)
 
-
-<details>
-<summary> DAY 1: Introduction to RISC-V ISA and GNU Compiler Toolchain </summary>
-<br>
-	
 # Day 1: Introduction to RISC-V ISA and GNU Compiler Toolchain
 
 ## Tools Installations
@@ -218,15 +213,6 @@ Output of code snippet :
 ![8](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/602ee994-858a-428c-9768-0789f2bdb4a4)
 
 we can play around with different values , datatype to find their respect max and min values 
-
-
-</details>
-
-
-<details>
-<summary> Day 2 : Introduction to ABI and Basic Verification Flow </summary>
-<br>
-	
 
 
 # Day 2 : Introduction to ABI and Basic Verification Flow
@@ -447,12 +433,6 @@ to make the process easy we make use of shell script : ``` rv32im.sh```
 
 ![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/08c88682-2c1f-431c-8e96-c57613993fc1)
 
-</details>
-
-
-
-<details>
-<summary>Day -3 : Introduction to Verilog RTL design and Synthesis</summary>
 
 
 # Day-3-Introduction to Verilog RTL design and Synthesis
@@ -703,11 +683,6 @@ yosys> !vim good_mux_netlist.v
 
 ```
 </details>
-</details>
-
-
-<details>
-<summary>Day-4:Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles</summary>
 
 # Day-4:Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles
 
@@ -1003,12 +978,7 @@ write_verilog mul2_net.v
 
 </details>
  
-</details>
 
-<details>
-<summary> DAY 5: Combinational & Sequential Optimizations </summary>
-<br>
-	
 # Day 5: Combinational & Sequential Optimizations
 
 <br>
@@ -1373,12 +1343,6 @@ endmodule
 
 ![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/555d1e9f-5f48-4e3b-a74b-e9d5987db445)
 
-</details>
-
-
-
-<details>
-<summary>Day 6 - GLS, blocking vs non-blocking and Synthesis-Simulation mismatch</summary>
 
 ## Day 6 - GLS, blocking vs non-blocking and Synthesis-Simulation mismatch
 ## GLS Concepts And Flow Using Iverilog
@@ -1606,8 +1570,6 @@ show
 ![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/a7cbd67b-2740-4a02-9c0f-82122e506519)
 
 
-
-</details>
 </details>
 
 
