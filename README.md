@@ -1344,7 +1344,7 @@ endmodule
 ![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/555d1e9f-5f48-4e3b-a74b-e9d5987db445)
 
 
-## Day 6 - GLS, blocking vs non-blocking and Synthesis-Simulation mismatch
+# Day 6 - GLS, blocking vs non-blocking and Synthesis-Simulation mismatch
 ## GLS Concepts And Flow Using Iverilog
 ### Gate level simulation
 + Gate-level synthesis produces an exact logic representation of the design using basic gates (AND, OR, NOT, etc.). This accuracy ensures that the design behaves as intended at the transistor level.
