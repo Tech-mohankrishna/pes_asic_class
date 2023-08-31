@@ -12,7 +12,7 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 + [Day 1️⃣: Introduction to RISC-V ISA and GNU Compiler Toolchain](#introduction-to-risc-v-isa-and-gnu-compiler-toolchain)
 + [Day 2️⃣: Introduction to ABI and Basic Verification Flow](#introduction-to-abi-and-basic-verification-flow)
 + [Day 3️⃣: Introduction to Verilog RTL design and Synthesis](#introduction-to-verilog-rtl-design-and-synthesis)
-+ [Day 4️⃣: Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles](#timing-libs-heirarchical-vs-flat-synthesis-&-effecient-flop-coding-styles) 
++ [Day 4️⃣: Timing Libs, Heirarchical VS Flat Synthesis, & Effecient Flop Coding Styles](#timing-libs-heirarchical-vs-flat-synthesis-&-effecient-flop-coding-styles) 
 + [Day 5️⃣: Combinational & Sequential Optimizations](#combinational-&-sequential-optimizations)
 + [Day 6️⃣: GLS, blocking vs non-blocking and Synthesis-Simulation mismatch](#gls-blocking-vs-non-blocking-and-synthesis-simulation-mismatch) <br> 
   	➡ GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements<br>
