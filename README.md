@@ -10,7 +10,7 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 
 # 🔖 Table of Contents
 + [Day 1️⃣: Introduction to RISC-V ISA and GNU Compiler Toolchain](#day-1-introduction-to-risc-v-isa-and-gnu-compiler-toolchain)
-+ [Day 2️⃣: Introduction to ABI and Basic Verification Flow](#day-2-introduction-to-abi-and-basic-verification-flow)
++ [Day 2️⃣: Introduction to ABI and Basic Verification Flow](#Day-2-Introduction-to-ABI-and-Basic-Verification-Flow)
 + [ Day 3️⃣: Introduction to Verilog RTL design and Synthesis](#day-3-Introduction-to-Verilog-RTL-design-and-Synthesis)
 + [ Day 4️⃣: Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles](#Day-4-Timing-Libs-Heirarchical-V/S-Flat-Synthesis-&-Effecient-Flop-Coding-Styles)
 + [ Day 5️⃣: Combinational & Sequential Optimizations ](#Day-5-Combinational-&-Sequential-Optimizations)
