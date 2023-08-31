@@ -9,12 +9,12 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 
 
 # 🔖 Table of Contents
-+ [Day 1️⃣: Introduction to RISC-V ISA and GNU Compiler Toolchain](#day-1-introduction-to-risc-v-isa-and-gnu-compiler-toolchain)
++ [Day 1️⃣: Introduction to RISC-V ISA and GNU Compiler Toolchain](#introduction-to-risc-v-isa-and-gnu-compiler-toolchain)
 + [Day 2️⃣: Introduction to ABI and Basic Verification Flow](#introduction-to-abi-and-basic-verification-flow)
-+ [Day 3️⃣: Introduction to Verilog RTL design and Synthesis](#day-3-introduction-to-verilog-rtl-design-and-synthesis)
-+ [Day 4️⃣: Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles](#day-4-timing-libs-heirarchical-v-s-flat-synthesis-&-effecient-flop-coding-styles)
-+ [Day 5️⃣: Combinational & Sequential Optimizations](#day-5-combinational-sequential-optimizations)
-+ [Day 6️⃣: GLS, blocking vs non-blocking and Synthesis-Simulation mismatch](#day-6-gls-blocking-vs-non-blocking-and-synthesis-simulation-mismatch) <br>
++ [Day 3️⃣: Introduction to Verilog RTL design and Synthesis](#introduction-to-verilog-rtl-design-and-synthesis)
++ [Day 4️⃣: Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles](#timing-libs-heirarchical-v-s-flat-synthesis-&-effecient-flop-coding-styles)
++ [Day 5️⃣: Combinational & Sequential Optimizations](#ombinational-sequential-optimizations)
++ [Day 6️⃣: GLS, blocking vs non-blocking and Synthesis-Simulation mismatch](#gls-blocking-vs-non-blocking-and-synthesis-simulation-mismatch) <br>
   	➡ GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements<br>
   	➡ Labs on GLS and Synthesis-Simulation Mismatch<br>
   	➡ Labs on synth-sim mismatch for blocking statement<br> 
@@ -29,7 +29,8 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 
 Errors regarding tools installation are resolved in [Resolve Errors Guide](resolve_errors.md)
 
-# Day 1: Introduction to RISC-V ISA and GNU Compiler Toolchain
+# Day 1
+# Introduction to RISC-V ISA and GNU Compiler Toolchain
 
 ## Tools Installations
 ## Tools Used:
@@ -435,7 +436,8 @@ to make the process easy we make use of shell script : ``` rv32im.sh```
 
 
 
-# Day-3-Introduction to Verilog RTL design and Synthesis
+# Day-3
+# Introduction to Verilog RTL design and Synthesis
 
 
 **RTL Design**: In simple terms RTL design or Register Transfer Level design is a method in which we can transfer data from one register to another. In RTL design we write code for Combinational and Sequential circuits in HDL(Hardware Description Language) like Verilog or VerilogHDL which can model logical and hardware operation. RTL design can be one code or set of verilog codes. **One key note is that we need to write RTL design with optimized and synthesizable (realizable as physical gates)**.
@@ -684,7 +686,8 @@ yosys> !vim good_mux_netlist.v
 ```
 </details>
 
-# Day-4:Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles
+# Day-4
+# Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles
 
 + ***Introduction to .lib***
 
@@ -979,7 +982,8 @@ write_verilog mul2_net.v
 </details>
  
 
-# Day 5: Combinational & Sequential Optimizations
+# Day 5
+# Combinational & Sequential Optimizations
 
 <br>
 
@@ -1344,7 +1348,8 @@ endmodule
 ![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/555d1e9f-5f48-4e3b-a74b-e9d5987db445)
 
 
-# Day 6 - GLS, blocking vs non-blocking and Synthesis-Simulation mismatch
+# Day 6
+# GLS, blocking vs non-blocking and Synthesis-Simulation mismatch
 ## GLS Concepts And Flow Using Iverilog
 ### Gate level simulation
 + Gate-level synthesis produces an exact logic representation of the design using basic gates (AND, OR, NOT, etc.). This accuracy ensures that the design behaves as intended at the transistor level.
