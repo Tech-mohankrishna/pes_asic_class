@@ -10,11 +10,11 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 
 # 🔖 Table of Contents
 + [Day 1️⃣: Introduction to RISC-V ISA and GNU Compiler Toolchain](#day-1-introduction-to-risc-v-isa-and-gnu-compiler-toolchain)
-+ [Day 2️⃣: Introduction to ABI and Basic Verification Flow](#Day-2-Introduction-to-ABI-and-Basic-Verification-Flow)
-+ [Day 3️⃣: Introduction to Verilog RTL design and Synthesis](#day-3-Introduction-to-Verilog-RTL-design-and-Synthesis)
-+ [Day 4️⃣: Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles](#Day-4-Timing-Libs-Heirarchical-V/S-Flat-Synthesis-&-Effecient-Flop-Coding-Styles)
-+ [Day 5️⃣: Combinational & Sequential Optimizations](#Day-5-Combinational-&-Sequential-Optimizations)
-+ [Day 6️⃣: GLS, blocking vs non-blocking and Synthesis-Simulation mismatch](#Day-6-GLS-blocking-vs-non-blocking-and-Synthesis-Simulation-mismatch) <br>
++ [Day 2️⃣: Introduction to ABI and Basic Verification Flow](#day-2-introduction-to-abi-and-basic-verification-flow)
++ [Day 3️⃣: Introduction to Verilog RTL design and Synthesis](#day-3-introduction-to-verilog-rtl-design-and-synthesis)
++ [Day 4️⃣: Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles](#day-4-timing-libs-heirarchical-v-/-s-flat-synthesis-&-effecient-flop-coding-styles)
++ [Day 5️⃣: Combinational & Sequential Optimizations](#day-5-Combinational-&-Sequential-Optimizations)
++ [Day 6️⃣: GLS, blocking vs non-blocking and Synthesis-Simulation mismatch](#day-6-GLS-blocking-vs-non-blocking-and-Synthesis-Simulation-mismatch) <br>
   	➡ GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements<br>
   	➡ Labs on GLS and Synthesis-Simulation Mismatch<br>
   	➡ Labs on synth-sim mismatch for blocking statement<br> 
