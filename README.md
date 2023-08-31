@@ -61,8 +61,8 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 
 Errors regarding tools installation are resolved in [Resolve Errors Guide](resolve_errors.md)
 
-# 📌 DAY-1
-# INTRODUCTION TO RISC-V ISA AND GNU COMPILER TOOLCHAIN 
+#  DAY-1
+# 📌 INTRODUCTION TO RISC-V ISA AND GNU COMPILER TOOLCHAIN 
 [Back to main](#table-of-contents)
 ## Tools Installations
 ## Tools Used:
@@ -247,8 +247,8 @@ Output of code snippet :
 
 we can play around with different values , datatype to find their respect max and min values 
 
-# 📌 DAY-2
-# Introduction to ABI and Basic Verification Flow
+#  DAY-2
+# 📌 Introduction to ABI and Basic Verification Flow
 [Back to main](#table-of-contents) <br>
 In Day 2 of your course, you will understanding the RISC-V instruction set architecture (ISA) by exploring the various fields of RISC-V instructions and their functions. This knowledge is crucial for gaining a comprehensive understanding of how RISC-V processors execute instructions and how programs are executed at the hardware level.
 
@@ -469,8 +469,8 @@ to make the process easy we make use of shell script : ``` rv32im.sh```
 
 
 
-# 📌 Day-3
-# INTRODUCTION TO VERILOG RTL DESIGN AND SYNTHESIS
+#  Day-3
+# 📌 INTRODUCTION TO VERILOG RTL DESIGN AND SYNTHESIS
 [Back to main](#table-of-contents)
 
 **RTL Design**: In simple terms RTL design or Register Transfer Level design is a method in which we can transfer data from one register to another. In RTL design we write code for Combinational and Sequential circuits in HDL(Hardware Description Language) like Verilog or VerilogHDL which can model logical and hardware operation. RTL design can be one code or set of verilog codes. **One key note is that we need to write RTL design with optimized and synthesizable (realizable as physical gates)**.
@@ -719,8 +719,8 @@ yosys> !vim good_mux_netlist.v
 ```
 </details>
 
-# 📌 DAY-5
-# TIMING LIBS HEIRARCHICAL AND FLAT SYNTHESIS
+#  DAY-5
+# 📌 TIMING LIBS HEIRARCHICAL AND FLAT SYNTHESIS
 [Back to main](#table-of-contents)
 + ***Introduction to .lib***
 
@@ -1381,8 +1381,8 @@ endmodule
 ![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/555d1e9f-5f48-4e3b-a74b-e9d5987db445)
 
 
-# 📌 DAY-6
-# GLS BLOCKING VS NON-BLOCKING AND SYNTHESIS SIMULATION MISMATCH
+#  DAY-6
+# 📌 GLS BLOCKING VS NON-BLOCKING AND SYNTHESIS SIMULATION MISMATCH
 [Back to main](#table-of-contents)
 ## GLS Concepts And Flow Using Iverilog
 ### Gate level simulation
