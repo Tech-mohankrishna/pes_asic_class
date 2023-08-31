@@ -1,4 +1,4 @@
-# ✅PES ASIC CLASS ✅
+# ✅VLSI PHYSICAL DESIGN FOR ASIC ✅
 # :book: ABOUT THE REPOSITORY
 
 Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs using open-source tools! Here, we embark on a journey that starts with processor specifications and leverages the power of the RISC-V ISA. We'll build processors from scratch, taking them through the entire RTL to GDS process  that meets various Performance, Power, Area ( PPA ) and manufacturability requirements. The best part? We're doing it all with open-source tools, including the RISC-V toolchain and OpenLane anad many more .
@@ -8,7 +8,7 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 
 
 
-# Table of Contents
+# TABLE OF CONTENTS
 + [Day 1️⃣: Introduction to RISC-V ISA and GNU Compiler Toolchain](#introduction-to-risc-v-isa-and-gnu-compiler-toolchain)
 + [Day 2️⃣: Introduction to ABI and Basic Verification Flow](#introduction-to-abi-and-basic-verification-flow)
 + [Day 3️⃣: Introduction to Verilog RTL design and Synthesis](#introduction-to-verilog-rtl-design-and-synthesis)
@@ -20,7 +20,7 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
   	➡ Labs on synth-sim mismatch for blocking statement<br> 
 
 
-# 📋:Requirements:
+# 📋 REQUIREMENTS 
 + **OS**: Ubuntu 20 +
 + **Memory**: 200 GB
 + **RAM**: 6 GB
@@ -30,7 +30,7 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 Errors regarding tools installation are resolved in [Resolve Errors Guide](resolve_errors.md)
 
 # Day 1
-# Introduction to RISC-V ISA and GNU Compiler Toolchain
+# INTRODUCTION TO RISC-V ISA AND GNU COMPILER TOOLCHAIN 
 [Back to main](#table-of-contents)
 ## Tools Installations
 ## Tools Used:
@@ -438,7 +438,7 @@ to make the process easy we make use of shell script : ``` rv32im.sh```
 
 
 # Day-3
-# Introduction to Verilog RTL design and Synthesis
+# INTRODUCTION TO VERILOG RTL DESIGN AND SYNTHESIS
 [Back to main](#table-of-contents)
 
 **RTL Design**: In simple terms RTL design or Register Transfer Level design is a method in which we can transfer data from one register to another. In RTL design we write code for Combinational and Sequential circuits in HDL(Hardware Description Language) like Verilog or VerilogHDL which can model logical and hardware operation. RTL design can be one code or set of verilog codes. **One key note is that we need to write RTL design with optimized and synthesizable (realizable as physical gates)**.
