@@ -1430,6 +1430,7 @@ always @(posedge clk)
   end
 ```
 ## Caveats With Blocking Statements
+
 **Caveats with blocking statements in hardware description languages like Verilog include:**
 + **Sequential Execution:** Blocking statements execute sequentially, which may not accurately represent concurrent hardware behavior in the design.
 
@@ -1444,9 +1445,169 @@ always @(posedge clk)
 To mitigate these issues, designers often use non-blocking statements for modeling sequential logic and adopt good coding practices to minimize order dependencies and improve code clarity.
 
 
+## Labs on GLS and Synthesis-Simulation Mismatch
+
+<details>
+	
+<summary>Lab: 1 </summary> 
+
+### code: ternary_operator_mux.v
+<br>
+
+```
+module ternary_operator_mux (input i0 , input i1 , input sel , output y);
+        assign y = sel?i1:i0;
+        endmodule
+```
+
+### Simulation
+
+```
+iverilog ternary_operator_mux.v tb_ternary_operator_mux.v
+./a.out
+gtkwave tb_ternary_operator_mux.vcd
+```
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/f35b22c2-8bcc-4c94-8510-bfd429f12bb2)
+
+### Synthesis
+
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog ternary_operator_mux.v
+synth -top ternary_operator_mux
+abc -liberty ../lib/sky130_fd_sc_hd_tt_025C_1v80.lib
+show
+
+```
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/0fdca6cf-b80c-4e68-b6e6-bac1edbf6753)
+
+
+### GLS section
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/41b9dcf7-4ab1-4960-abbc-5a015034f1c5)
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/5f49b9e1-89ad-4c2b-8b99-11b348beee26)
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/d00b419b-3be8-45bd-b047-131cd9bd31a1)
 
 
 
+
+</details>
+
+
+<details>
+	
+<summary>Lab: 2 </summary> 
+
+### code: bad_mux.v
+<br>
+
+```
+module bad_mux (input i0 , input i1 , input sel , output reg y);
+always @ (sel)
+begin
+        if(sel)
+                y <= i1;
+        else
+                y <= i0;
+end
+endmodule
+
+```
+
+### Simulation
+
+```
+iverilog bad_mux.v tb_bad_mux.v
+./a.out
+gtkwave tb_bad_mux.vcd
+```
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/a39ed418-9e26-494e-a639-c5d7fe97ec0a)
+
+
+### Synthesis
+
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog ternary_operator_mux.v
+synth -top ternary_operator_mux
+abc -liberty ../lib/sky130_fd_sc_hd_tt_025C_1v80.lib
+show
+
+```
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/7dcb4f18-f801-4d58-a96e-3801f190e0c0)
+
+
+
+### GLS section
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/51525ed8-b00a-4040-88b9-03b1334cfb8b)
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/631642fd-a911-4838-862b-f79cb887acf7)
+
+</details>
+
+
+
+## Labs on synth-sim mismatch for blocking statement 
+
+
+<details>
+	
+<summary>Lab: 1 </summary> 
+
+### code: blocking_caveat.v
+<br>
+
+```
+module bad_mux (input i0 , input i1 , input sel , output reg y);
+always @ (sel)
+begin
+        if(sel)
+                y <= i1;
+        else
+                y <= i0;
+end
+endmodule
+
+```
+
+### Simulation
+
+```
+iverilog blocking-caveat.v tb_blocking_caveat.v
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/4a58ccf9-9a98-417c-90f9-d2bfdc788415)
+
+### Synthesis
+
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog blocking_caveat.v
+synth -top blocking_caveat
+abc -liberty ../lib/sky130_fd_sc_hd_tt_025C_1v80.lib
+show
+
+```
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/c3d8d016-b8dd-46c1-8231-dc95a8c2d057)
+
+
+### GLS
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/a7cbd67b-2740-4a02-9c0f-82122e506519)
+
+
+
+</details>
 </details>
 
 
