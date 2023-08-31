@@ -13,7 +13,7 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 + [Day 2️⃣: Introduction to ABI and Basic Verification Flow](#introduction-to-abi-and-basic-verification-flow)
 + [Day 3️⃣: Introduction to Verilog RTL design and Synthesis](#introduction-to-verilog-rtl-design-and-synthesis)
 + [Day 4️⃣: Timing Libs, Heirarchical VS Flat Synthesis, & Effecient Flop Coding Styles](#timing-libs-heirarchical-and-flat-synthesis)
-+ [Day 5️⃣: Combinational & Sequential Optimizations](#combinational-&-sequential-optimizations)
++ [Day 5️⃣: Combinational & Sequential Optimizations](#combinational-and-sequential-optimizations)
 + [Day 6️⃣: GLS, blocking vs non-blocking and Synthesis-Simulation mismatch](#gls-blocking-vs-non-blocking-and-synthesis-simulation-mismatch) <br> 
   	➡ GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements<br>
   	➡ Labs on GLS and Synthesis-Simulation Mismatch<br>
@@ -983,7 +983,7 @@ write_verilog mul2_net.v
  
 
 # Day 5
-# Combinational & Sequential Optimizations
+# Combinational and Sequential Optimizations
 
 <br>
 
