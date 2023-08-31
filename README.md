@@ -10,10 +10,42 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 
 # TABLE OF CONTENTS
 + [Day 1️⃣: Introduction to RISC-V ISA and GNU Compiler Toolchain](#introduction-to-risc-v-isa-and-gnu-compiler-toolchain)
+  	- Labwork for RISCV Toolchain
+  	- RISCV GCC Compiler and Dissemble
+  	- Spike Simulation and Debug
+	- Integer Number Representation
+  	- Labwork For Signed and Unsigned Numbers
+
 + [Day 2️⃣: Introduction to ABI and Basic Verification Flow](#introduction-to-abi-and-basic-verification-flow)
+ 	- Introduction to ABI
+  	- Memmory Allocation for Double Words
+  	- Load, Add and Store Instructions
+  	- 32-Registers and their ABI Names
+  	- Labwork using ABI Function Calls
+  	- Simulate C Program using Function Call
+  	- Lab to Run C-Program on RISCV-CPU
+
 + [Day 3️⃣: Introduction to Verilog RTL design and Synthesis](#introduction-to-verilog-rtl-design-and-synthesis)
+  	- Introduction to open-source simulator iverilog
+  	- Labs using iverilog and gtkwave
+   		+ Introduction to lab
+  	  	+ Introduction iverilog gtkwave 
+	- Introduction to Yosys and Logic synthesis
+   		+ Introduction to yosys
+     		+ Introduction to logic synthesis
+  	- Lab using Yosys and Sky130 PDKs
 + [Day 4️⃣: Timing Libs, Heirarchical VS Flat Synthesis, & Effecient Flop Coding Styles](#timing-libs-heirarchical-and-flat-synthesis)
+  	- Introduction to timing dot libs
+  	- Hierarchical vs Flat Synthesis
+  	- Various Flop Coding Styles and optimization
+   		+ Flop coding styles
+  	  	+ Lab flop synthesis simulations
+  	  	+ Interesting optimisations 
 + [Day 5️⃣: Combinational & Sequential Optimizations](#combinational-and-sequential-optimizations)
+  	- Introduction to optimizations
+  	- Combinational logic optimizations
+  	- Sequential logic optimizations
+  	- Sequential optimzations for unused outputs
 + [Day 6️⃣: GLS, blocking vs non-blocking and Synthesis-Simulation mismatch](#gls-blocking-vs-non-blocking-and-synthesis-simulation-mismatch) <br> 
   	- GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements<br>
   	- Labs on GLS and Synthesis-Simulation Mismatch<br>
