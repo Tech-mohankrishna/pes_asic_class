@@ -1,7 +1,9 @@
 # ✅VLSI PHYSICAL DESIGN FOR ASIC ✅
 # :book: ABOUT THE REPOSITORY
 
-Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs using open-source tools! Here, we embark on a journey that starts with processor specifications and leverages the power of the RISC-V ISA. We'll build processors from scratch, taking them through the entire RTL to GDS process  that meets various Performance, Power, Area ( PPA ) and manufacturability requirements. The best part? We're doing it all with open-source tools, including the RISC-V toolchain and OpenLane anad many more .
+The "VLSI Physical Design for ASIC" course delves into the intricate process of translating logical designs into physically manufacturable Application-Specific Integrated Circuits (ASICs). Students will learn about floorplanning, placement, routing, and verification, gaining hands-on experience with industry-standard tools. Ideal for electrical and computer engineering students, the course equips them with the skills needed to contribute to advanced electronics and semiconductor innovations.
+
+
 <p align="center">
   <img src="https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/2e6a36cd-b297-4f0d-8058-4e003b5cca40" >
 </p>
@@ -1450,9 +1452,6 @@ To mitigate these issues, designers often use non-blocking statements for modeli
 
 ## Labs on GLS and Synthesis-Simulation Mismatch
 
-<details>
-	
-<summary>Lab: 1 </summary> 
 
 ### code: ternary_operator_mux.v
 <br>
@@ -1496,14 +1495,6 @@ show
 ![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/d00b419b-3be8-45bd-b047-131cd9bd31a1)
 
 
-
-
-</details>
-
-
-<details>
-	
-<summary>Lab: 2 </summary> 
 
 ### code: bad_mux.v
 <br>
@@ -1553,16 +1544,12 @@ show
 
 ![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/631642fd-a911-4838-862b-f79cb887acf7)
 
-</details>
 
 
 
 ## Labs on synth-sim mismatch for blocking statement 
 
 
-<details>
-	
-<summary>Lab: 1 </summary> 
 
 ### code: blocking_caveat.v
 <br>
@@ -1608,8 +1595,6 @@ show
 
 ![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/a7cbd67b-2740-4a02-9c0f-82122e506519)
 
-
-</details>
 
 
 
