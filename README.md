@@ -14,6 +14,11 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 + [ Day-3:Introduction to Verilog RTL design and Synthesis](#day-3-Introduction-to-Verilog-RTL-design-and-Synthesis)
 + [ Day-4:Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles](#Day-4-Timing-Libs-Heirarchical-V/S-Flat-Synthesis-&-Effecient-Flop-Coding-Styles)
 + [ Day-5:Combinational & Sequential Optimizations ](#Day-5-Combinational-&-Sequential-Optimizations)
++ [Day 6 - GLS, blocking vs non-blocking and Synthesis-Simulation mismatch ](#Day-6-GLS-blocking-vs-non-blocking-and-Synthesis-Simulation-mismatch) 
+  - GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements
+  - Labs on GLS and Synthesis-Simulation Mismatch
+  - Labs on synth-sim mismatch for blocking statement 
+
 
 ## :Requirements:
 + **OS**: Ubuntu 20 +
@@ -1266,14 +1271,183 @@ show
 
 ![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/3e439cf3-3d9c-4729-94a1-e41b93c22f58)
 
+### **code - 3**
+
+#### dff_const3.v
+``` v
+module dff_const3(input clk, input reset, output reg q);
+reg q1;
+
+always @(posedge clk, posedge reset)
+begin
+        if(reset)
+        begin
+                q <= 1'b1;
+                q1 <= 1'b0;
+        end
+        else
+        begin
+                q1 <= 1'b1;
+                q <= q1;
+        end
+end
+
+endmodule
+
+               
+```
+
+#### simulation : 
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/2afdcc12-770b-40b7-a0de-b5bc5ff1a1de)
 
 
+
+#### Syntehsis :
+
+commands for synthesis :
+```
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const3.v
+synth -top dff_const3
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/c4216171-9f06-48ae-b5e5-f26257062c78)
+
+
+
+
+## Sequential Optimization for unsued outputs
+### counter_opt.v
+### code - 1
+
+```v
+module counter_opt (input clk , input reset , output q);
+reg [2:0] count;
+assign q = count[0];
+
+always @(posedge clk ,posedge reset)
+begin
+        if(reset)
+                count <= 3'b000;
+        else
+                count <= count + 1;
+end
+
+endmodule
+
+```
+
+
+### Synthesis : 
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/af66acbb-2749-4ee9-ba42-4ef1c7a65121)
+
+
+### counter_opt2.v
+### code - 2
+
+```v
+module counter_opt (input clk , input reset , output q);
+reg [2:0] count;
+assign q = (count[2:0] == 3'b100);
+
+always @(posedge clk ,posedge reset)
+begin
+        if(reset)
+                count <= 3'b000;
+        else
+                count <= count + 1;
+end
+
+endmodule
+
+
+```
+
+
+### Synthesis : 
+
+
+![image](https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/555d1e9f-5f48-4e3b-a74b-e9d5987db445)
 
 </details>
 
 
 
+<details>
+<summary>Day 6 - GLS, blocking vs non-blocking and Synthesis-Simulation mismatch</summary>
 
+## Day 6 - GLS, blocking vs non-blocking and Synthesis-Simulation mismatch
+## GLS Concepts And Flow Using Iverilog
+### Gate level simulation
++ Gate-level synthesis produces an exact logic representation of the design using basic gates (AND, OR, NOT, etc.). This accuracy ensures that the design behaves as intended at the transistor level.
++ hile higher-level synthesis focuses on functionality, gate-level synthesis optimizes the design for factors like area, power consumption, and timing constraints. This ensures efficient use of resources.
++ It operates at a lower abstraction level than higher-level simulations and is essential for debugging and ensuring circuit correctness.
++ Gate-level synthesis considers gate delays and interconnect delays, allowing for more accurate timing analysis. It aids in achieving timing closure, ensuring signals propagate correctly within specified time limits.
+
+### To perform gate-level simulation using Icarus Verilog (iverilog):
+
+<p align="center">
+  <img src="https://github.com/Tech-mohankrishna/pes_asic_class/assets/57735263/5bbc2545-8e13-4bfb-a463-c88673482694" alt="Image" width="600">
+</p>
+
+1. Write RTL code.
+2. Synthesize to generate gate-level netlist.
+3. Create a testbench in Verilog.
+4. Compile both netlist and testbench.
+5. Run simulation with compiled files.Debug and iterate as needed.
+6. Perform timing analysis if necessary.
+7. Generate test vectors for manufacturing tests.
+
+## Synthesis-Simulation mismatch
++ Synthesis-simulation mismatch is when there are differences between how a digital circuit behaves in simulation at the RTL level and how it behaves after gate-level synthesis.
++ This can occur due to optimization, clock domain issues, library differences, or other factors.
++ To address it, ensure consistent tool versions, check synthesis settings, debug with simulation tools, and follow best practices in RTL coding and design.
++ Resolving these mismatches is crucial for reliable hardware implementation.
+
+## Blocking And Non-Blocking Statements
+**Blocking Statements**
++ Blocking statements execute sequentially in the order they appear within a procedural block or always block.
++ When a blocking assignment or operation is encountered, the simulation halts and waits for it to complete before moving on to the next statement.
++ Blocking assignments are typically used to describe combinational logic, where the order of execution doesn't matter, and each assignment depends on the previous one.
+
+**Example (Blocking Assignment):** `a = b + c; // b and c must be known before calculating 'a'`
+
+**Non-Blocking Statements**
++ Non-blocking statements allow concurrent execution within a procedural block or always block, making them suitable for describing synchronous digital circuits.
++ When a non-blocking assignment or operation is encountered, the simulation does not wait for it to complete. Instead, it schedules the assignments to occur in parallel.
++ Non-blocking assignments are typically used to model sequential logic, like flip-flops and registers, where parallel execution is required.
+
+**Example (Non-Blocking Assignment):** 
+```
+always @(posedge clk)
+  begin
+    b <= a; // Concurrently scheduled assignment
+    c <= b; // Concurrently scheduled assignment
+  end
+```
+## Caveats With Blocking Statements
+**Caveats with blocking statements in hardware description languages like Verilog include:**
++ **Sequential Execution:** Blocking statements execute sequentially, which may not accurately represent concurrent hardware behavior in the design.
+
++ **Order Dependency:** The order of blocking statements can affect simulation results, leading to race conditions or unintended behavior.
+
++ **Combinational Logic Only:** Blocking statements are primarily used for modeling combinational logic, making them less suitable for sequential or synchronous logic.
+
++ **Limited for Testbenches:** In testbench code, excessive use of blocking statements can lead to simulation race conditions that don't reflect real-world hardware behavior.
+
++ **Initialization Issues:** In some cases, initializing variables with blocking assignments can lead to unexpected results due to order-dependent initialization.
+
+To mitigate these issues, designers often use non-blocking statements for modeling sequential logic and adopt good coding practices to minimize order dependencies and improve code clarity.
+
+
+
+
+
+</details>
 
 
 
