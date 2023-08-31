@@ -15,9 +15,9 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 + [Day 4️⃣: Timing Libs, Heirarchical VS Flat Synthesis, & Effecient Flop Coding Styles](#timing-libs-heirarchical-and-flat-synthesis)
 + [Day 5️⃣: Combinational & Sequential Optimizations](#combinational-and-sequential-optimizations)
 + [Day 6️⃣: GLS, blocking vs non-blocking and Synthesis-Simulation mismatch](#gls-blocking-vs-non-blocking-and-synthesis-simulation-mismatch) <br> 
-  	➡ GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements<br>
-  	➡ Labs on GLS and Synthesis-Simulation Mismatch<br>
-  	➡ Labs on synth-sim mismatch for blocking statement<br> 
+  	- GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements<br>
+  	- Labs on GLS and Synthesis-Simulation Mismatch<br>
+  	- Labs on synth-sim mismatch for blocking statement<br> 
 
 
 # 📋 REQUIREMENTS 
