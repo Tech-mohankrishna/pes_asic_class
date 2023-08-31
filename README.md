@@ -469,8 +469,8 @@ to make the process easy we make use of shell script : ``` rv32im.sh```
 
 
 
-#  Day-3
-# 📌 INTRODUCTION TO VERILOG RTL DESIGN AND SYNTHESIS
+# 📌 Day-3
+# INTRODUCTION TO VERILOG RTL DESIGN AND SYNTHESIS
 [Back to main](#table-of-contents)
 
 **RTL Design**: In simple terms RTL design or Register Transfer Level design is a method in which we can transfer data from one register to another. In RTL design we write code for Combinational and Sequential circuits in HDL(Hardware Description Language) like Verilog or VerilogHDL which can model logical and hardware operation. RTL design can be one code or set of verilog codes. **One key note is that we need to write RTL design with optimized and synthesizable (realizable as physical gates)**.
