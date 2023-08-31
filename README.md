@@ -31,7 +31,7 @@ Errors regarding tools installation are resolved in [Resolve Errors Guide](resol
 
 # Day 1
 # Introduction to RISC-V ISA and GNU Compiler Toolchain
-[Back to main](✅pes-asic-class-✅)
+[Back to main](#pes-asic-class)
 ## Tools Installations
 ## Tools Used:
 + **RISC-V GNU Toolchain**: A comprehensive set of tools for compiling and building software to run on RISC-V processors.
