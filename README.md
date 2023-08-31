@@ -1,4 +1,4 @@
-# 🟩 PES ASIC CLASS 🟩
+# ✅PES ASIC CLASS ✅
 # :book: About the repository
 
 Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs using open-source tools! Here, we embark on a journey that starts with processor specifications and leverages the power of the RISC-V ISA. We'll build processors from scratch, taking them through the entire RTL to GDS process  that meets various Performance, Power, Area ( PPA ) and manufacturability requirements. The best part? We're doing it all with open-source tools, including the RISC-V toolchain and OpenLane anad many more .
@@ -9,18 +9,18 @@ Welcome to my GitHub repository dedicated to VLSI Physical Design for ASICs usin
 
 
 # 🔖 Table of Contents
-+ [Day 1:Introduction to RISC-V ISA and GNU Compiler Toolchain](#day-1-introduction-to-risc-v-isa-and-gnu-compiler-toolchain)
-+ [Day 2:Introduction to ABI and Basic Verification Flow](#day-2-introduction-to-abi-and-basic-verification-flow)
-+ [ Day-3:Introduction to Verilog RTL design and Synthesis](#day-3-Introduction-to-Verilog-RTL-design-and-Synthesis)
-+ [ Day-4:Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles](#Day-4-Timing-Libs-Heirarchical-V/S-Flat-Synthesis-&-Effecient-Flop-Coding-Styles)
-+ [ Day-5:Combinational & Sequential Optimizations ](#Day-5-Combinational-&-Sequential-Optimizations)
-+ [Day 6 - GLS, blocking vs non-blocking and Synthesis-Simulation mismatch ](#Day-6-GLS-blocking-vs-non-blocking-and-Synthesis-Simulation-mismatch) 
-  - GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements
-  - Labs on GLS and Synthesis-Simulation Mismatch
-  - Labs on synth-sim mismatch for blocking statement 
++ [Day 1️⃣: Introduction to RISC-V ISA and GNU Compiler Toolchain](#day-1-introduction-to-risc-v-isa-and-gnu-compiler-toolchain)
++ [Day 2️⃣: Introduction to ABI and Basic Verification Flow](#day-2-introduction-to-abi-and-basic-verification-flow)
++ [ Day 3️⃣: Introduction to Verilog RTL design and Synthesis](#day-3-Introduction-to-Verilog-RTL-design-and-Synthesis)
++ [ Day 4️⃣: Timing Libs, Heirarchical V/S Flat Synthesis, & Effecient Flop Coding Styles](#Day-4-Timing-Libs-Heirarchical-V/S-Flat-Synthesis-&-Effecient-Flop-Coding-Styles)
++ [ Day 5️⃣: Combinational & Sequential Optimizations ](#Day-5-Combinational-&-Sequential-Optimizations)
++ [Day 6️⃣: GLS, blocking vs non-blocking and Synthesis-Simulation mismatch ](#Day-6-GLS-blocking-vs-non-blocking-and-Synthesis-Simulation-mismatch) <br>
+  	➡ GLS, Synthesis-Simulation mismatch and Blocking/Non-blocking statements<br>
+  	➡ Labs on GLS and Synthesis-Simulation Mismatch<br>
+  	➡ Labs on synth-sim mismatch for blocking statement<br> 
 
 
-## :Requirements:
+# 📋:Requirements:
 + **OS**: Ubuntu 20 +
 + **Memory**: 200 GB
 + **RAM**: 6 GB
