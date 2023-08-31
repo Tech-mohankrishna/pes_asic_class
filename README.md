@@ -217,7 +217,7 @@ we can play around with different values , datatype to find their respect max an
 
 # DAY-2
 # Introduction to ABI and Basic Verification Flow
-[Back to main](#table-of-contents)
+[Back to main](#table-of-contents) <br>
 In Day 2 of your course, you will understanding the RISC-V instruction set architecture (ISA) by exploring the various fields of RISC-V instructions and their functions. This knowledge is crucial for gaining a comprehensive understanding of how RISC-V processors execute instructions and how programs are executed at the hardware level.
 
 ## Overview of few instructions :
@@ -688,7 +688,7 @@ yosys> !vim good_mux_netlist.v
 </details>
 
 # Day-4
-# timing libs heirarchical and flat synthesis
+# TIMING LIBS HEIRARCHICAL AND FLAT SYNTHESIS
 [Back to main](#table-of-contents)
 + ***Introduction to .lib***
 
@@ -984,7 +984,7 @@ write_verilog mul2_net.v
  
 
 # Day 5
-# Combinational and Sequential Optimizations
+# COMBINATIONAL AND SEQUENTIAL OPTIMIZATIONS
 [Back to main](#table-of-contents)
 <br>
 
@@ -1350,7 +1350,7 @@ endmodule
 
 
 # Day 6
-# GLS, blocking vs non-blocking and Synthesis-Simulation mismatch
+# GLS BLOCKING VS NON-BLOCKING AND SYNTHESIS SIMULATION MISMATCH
 [Back to main](#table-of-contents)
 ## GLS Concepts And Flow Using Iverilog
 ### Gate level simulation
